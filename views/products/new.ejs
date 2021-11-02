@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/product.css" />
+    <title>New Product</title>
+  </head>
+  <body>
+    <h1>New Product</h1>
+    <form action="/products" method="POST" id="new-product">
+      <label for="name">Product Name</label>
+      <input type="text" name="name" id="name" placeholder="Product Name:" />
+      <label for="price">Product Price</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        step="any"
+        placeholder="Product Price:"
+      />
+      <label for="category">Choose Category</label>
+      <select name="category" id="category">
+        <option value="fruite">Fruit</option>
+        <option value="vegetable">Vegetable</option>
+        <option value="dairy">Dairy</option>
+      </select>
+      <label for="img">Thumbnail link</label>
+      <textarea
+        name="img"
+        id="img"
+        cols="30"
+        rows="10"
+        placeholder="img URL link"
+      ></textarea>
+      <label for="details">Details</label>
+      <textarea name="details" id="details" cols="30" rows="10"></textarea>
+      <button>Add Product</button>
+    </form>
+    <a href="/products">Back</a>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/product.css" />
+    <title>Edit Products</title>
+  </head>
+  <body>
+    <h1>Edit Product</h1>
+    <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+      <button>Delete Product</button>
+    </form>
+    <form
+      action="/products/<%=product._id%>?_method=PUT "
+      method="POST"
+      id="new-product"
+    >
+      <label for="name">Product Name</label>
+      <input
+        value="<%=product.name%>"
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Product Name:"
+      />
+      <label for="price">Product Price</label>
+      <input
+        value="<%=product.price%>"
+        type="number"
+        name="price"
+        id="price"
+        step="any"
+        placeholder="Product Price:"
+      />
+      <label for="category">Choose Category</label>
+      <select value="<%=product.category%>" name="category" id="category">
+        <option value="fruite">Fruit</option>
+        <option value="vegetable">Vegetable</option>
+        <option value="dairy">Dairy</option>
+      </select>
+      <label for="img">Thumbnail link</label>
+      <textarea
+        name="img"
+        id="img"
+        cols="30"
+        rows="10"
+        placeholder="img URL link"
+      >
+<%=product.img%></textarea
+      >
+      <label for="details">Details</label>
+      <textarea name="details" id="details" cols="30" rows="10">
+<%=product.details%></textarea
+      >
+      <button>Update Product</button>
+    </form>
+    <a href="/products">Back</a>
+  </body>
+</html>

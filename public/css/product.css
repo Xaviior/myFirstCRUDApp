@@ -1,0 +1,18 @@
+#new-product {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+button {
+  width: 30vw;
+  height: 3rem;
+}
+
+input {
+  height: 3rem;
+}
+
+select {
+  height: 3rem;
+}
