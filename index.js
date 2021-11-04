@@ -25,8 +25,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 
 app.get("/products", async (req, res) => {
-  const products = await Product.find({});
-  res.render("products/index", { products });
+  const { category } = req.query;
+  if (category) {
+    const products = await Product.find({ category });
+    res.render("products/index", { products, category });
+  } else {
+    const products = await Product.find({});
+    res.render("products/index", { products });
+  }
 });
 
 app.get("/products/new", (req, res) => {
